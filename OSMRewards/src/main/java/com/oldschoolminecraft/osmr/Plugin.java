@@ -8,11 +8,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Plugin extends JavaPlugin
 {
+    public static Plugin instance;
+    
     private Configuration config;
     private File pluginDir = new File("plugins/OSMRewards");
     
     public void onEnable()
     {
+        instance = this;
+        
         if (!pluginDir.exists())
             pluginDir.mkdirs();
         
